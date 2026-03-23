@@ -3,8 +3,8 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Backups (large zips, don't commit)
-06_BACKUP/
+# Backup zip archives (don't commit)
+06_BACKUP/*.zip
 
 # OS
 .DS_Store
