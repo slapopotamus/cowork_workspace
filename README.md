@@ -16,13 +16,17 @@ The workspace is scoped to:
 - Audit and compliance work
 - Incident response support
 
-All behavior is governed by the documents in `01_CONTEXT/`.
-
 ---
 
 ## Getting Started
 
-See `INITIALIZE.md` at the root of this workspace. Copy the initialization prompt, paste it into Claude (Cowork mode) with this folder selected, and the session will bootstrap itself automatically.
+**1. Clone or download the repository and open the folder in Cowork.**
+
+**2. Customize your identity.** Before your first session, open `01_CONTEXT/PARTNERSHIP-AGREEMENT.md` and edit the role description, scope, and communication tone to match your environment and preferences. This shapes how Claude operates for every session.
+
+**3. Paste the initialization prompt.** Open `INITIALIZE.md`, copy the First Session Prompt, and paste it into Claude. Claude will read all governing documents, configure itself, rebuild its memory, and confirm it is ready. This takes about 30 seconds.
+
+**4. Start working.** From that point forward Claude knows its role, the workspace rules, and how to invoke the workers. For returning sessions, use the shorter Returning Session Prompt in `INITIALIZE.md`.
 
 ---
 
@@ -44,7 +48,7 @@ See `INITIALIZE.md` at the root of this workspace. Copy the initialization promp
 ### Cyber Security Council
 A structured multi-expert deliberation framework for high-stakes security decisions. The Council seats domain experts drawn from a standing roster, deliberates through structured rounds, and delivers a reasoned decision with dissent preserved.
 
-Use it for: vulnerability triage, architecture decisions, incident attribution, risk prioritization, threat assessment, and any decision that benefits from adversarial challenge before you commit.
+Use it for vulnerability triage, architecture decisions, incident attribution, risk prioritization, threat assessment, and any decision that benefits from adversarial challenge before you commit.
 
 Invocation template: `04_WORKERS/CyberSecurityCouncil/invocation-template.md`
 Session outputs: `05_OUTPUTS/CybersecurityCouncilSessions/`

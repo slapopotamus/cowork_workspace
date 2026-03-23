@@ -2,32 +2,44 @@
 
 ## First Time Setup
 
-Copy the prompt below and paste it into Claude with this workspace folder selected. Claude will read all governing documents, configure itself for the session, and confirm it is ready to operate.
+Copy the prompt below and paste it into Claude (Cowork mode) with this folder selected. Claude will read all governing documents, configure itself for the session, rebuild its memory, and confirm it is ready to operate.
 
-You only need to do this once per session. At the start of future sessions, a shorter re-orientation prompt is provided below.
+You only need to do this once per session. A shorter returning session prompt is provided below for subsequent sessions.
 
 ---
 
 ## First Session Prompt
 
 ```
-You are opening a structured cybersecurity operations workspace for the first time.
+You are opening a structured cybersecurity operations workspace. Please do the following in order and confirm each step is complete before moving to the next.
 
-Please do the following in order:
+1. Read all five files in 01_CONTEXT/ in this order:
+   - PARTNERSHIP-AGREEMENT.md
+   - TRUTH-PROTOCOL.md
+   - SECURITY_SOP.md
+   - RUNNING-DOCUMENT.md
+   - QUICK-REFERENCE.md
 
-1. Read all files in 01_CONTEXT/ — specifically PARTNERSHIP-AGREEMENT.md, TRUTH-PROTOCOL.md, SECURITY_SOP.md, RUNNING-DOCUMENT.md, and QUICK-REFERENCE.md. These documents define your role, communication standards, operating rules, and the current state of the workspace.
+   These documents define your role, communication standards, operating rules, standing commands, and the current state of the workspace. They govern all behavior from this point forward.
 
-2. Read 04_WORKERS/CyberSecurityCouncil/invocation-template.md and 04_WORKERS/ThreatHunter/invocation-template.md so you understand how to invoke each worker.
+2. Read the invocation templates for both workers:
+   - 04_WORKERS/CyberSecurityCouncil/invocation-template.md
+   - 04_WORKERS/ThreatHunter/invocation-template.md
 
-3. Audit the workspace structure and confirm all expected directories are present: 01_CONTEXT, 02_INBOX, 03_PROJECTS, 04_WORKERS, 05_OUTPUTS, 06_BACKUP.
+3. Rebuild session memory. Write the following to your memory system so this context persists across sessions:
+   - Your role and operating scope as defined in PARTNERSHIP-AGREEMENT.md
+   - The standing rules from RUNNING-DOCUMENT.md (output routing, backup procedure, ThreatHunter file format)
+   - The location and purpose of each worker
 
-4. Check 02_INBOX/ for any files waiting to be triaged. If files are present, list them. If empty, note that.
+4. Audit the workspace and confirm all six directories are present: 01_CONTEXT, 02_INBOX, 03_PROJECTS, 04_WORKERS, 05_OUTPUTS, 06_BACKUP.
 
-5. Report back with:
-   - A confirmation that all context documents have been read
-   - Your understanding of your role and operating standards in 2-3 sentences
-   - Current workspace status (active projects, inbox items, any anomalies)
-   - Standing by for first task
+5. Check 02_INBOX/ for any files waiting to be triaged. List them if present.
+
+6. Report back with:
+   - Confirmation all context documents have been read
+   - A 2-3 sentence summary of your role and how you will operate
+   - Workspace status: active projects, inbox items, anything that needs attention
+   - Ready for first task
 
 Adopt the communication style defined in PARTNERSHIP-AGREEMENT.md from this point forward, including BLUF formatting for all substantive responses.
 ```
@@ -36,26 +48,28 @@ Adopt the communication style defined in PARTNERSHIP-AGREEMENT.md from this poin
 
 ## Returning Session Prompt
 
-Use this at the start of any subsequent session to re-orient quickly without a full re-read.
+Use this at the start of any subsequent session to re-orient quickly.
 
 ```
 Re-orienting for a new session. Please:
 
-1. Read RUNNING-DOCUMENT.md in 01_CONTEXT/ to get current project status and standing rules.
-2. Check 02_INBOX/ for anything new.
-3. Confirm you are ready and summarize where we left off.
+1. Read 01_CONTEXT/RUNNING-DOCUMENT.md to get current project status and standing rules.
+2. Check 02_INBOX/ for anything new since last session.
+3. Summarize where we left off and confirm ready for next task.
 ```
 
 ---
 
 ## Notes for New Users
 
-**Customizing the identity.** The `PARTNERSHIP-AGREEMENT.md` file defines how Claude communicates and what it focuses on. Edit the role description, tone, and scope sections to match your environment and preferences before your first session.
+**Customize the identity first.** Before your first session, open `01_CONTEXT/PARTNERSHIP-AGREEMENT.md` and edit the role description, scope, and tone to match your environment and preferences. This is what shapes how Claude communicates for every session.
 
-**The RUNNING-DOCUMENT.md is your session memory.** Claude does not automatically remember previous sessions. The running document carries context forward. Update it at the end of any session where meaningful work was done.
+**RUNNING-DOCUMENT.md is your session memory.** Claude does not retain memory between sessions automatically. This file carries context forward. Update it at the end of any session where meaningful work was done.
 
-**Output routing.** Everything Claude produces goes into `05_OUTPUTS/`. Subdirectories are created per worker or project. Do not save deliverables anywhere else.
+**All outputs go to 05_OUTPUTS/.** Nothing lands at workspace root or inside worker directories. Subdirectories are created per worker or project type.
 
-**Backups.** Say `backup` at any time and Claude will zip the workspace and save it to `06_BACKUP/` with today's date. Backup archives are excluded from git.
+**Backups are one word.** Say `backup` at any time and Claude will zip the full workspace and drop it in `06_BACKUP/` with today's date. Zip archives are excluded from git.
 
-**Adding workers.** Drop a new worker folder into `04_WORKERS/` with a `hunter.md` or equivalent persona file and an `invocation-template.md`. Reference it in `QUICK-REFERENCE.md` and update `README.md`.
+**Adding workers.** Drop a new worker folder into `04_WORKERS/` with a persona file (e.g. `hunter.md`) and an `invocation-template.md`. Reference it in `01_CONTEXT/QUICK-REFERENCE.md` and update `README.md`.
+
+**The archive folder in CyberSecurityCouncil is intentional.** It holds prior implementation documents and is excluded from Claude's context via `.coworkignore` to keep sessions clean.

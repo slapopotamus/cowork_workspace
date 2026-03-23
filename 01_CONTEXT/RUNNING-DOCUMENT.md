@@ -46,7 +46,7 @@
 - Workers active: `CyberSecurityCouncil/`, `ThreatHunter/`
 - Council session outputs (4 sessions) in `05_OUTPUTS/CybersecurityCouncilSessions/`
 - `SECURITY_SOP.md` sections 2–5 (CrowdStrike checklists, query standards, IR runbooks, reporting) remain placeholder — populate as work begins.
-- On next session open, Hootz should re-read this log and all `01_CONTEXT/` files before proceeding.
+- On next session open, use the returning session prompt in `INITIALIZE.md` to re-orient before proceeding.
 
 ---
 

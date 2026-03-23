@@ -1,0 +1,16 @@
+# Exclude from Claude's context window
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Backup archives
+06_BACKUP/
+
+# Git internals
+.git/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
