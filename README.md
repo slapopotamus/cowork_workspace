@@ -6,9 +6,9 @@ A structured AI-powered workspace for cybersecurity operations, threat hunting, 
 
 ## What This Is
 
-This workspace is the operating environment for **Hootz**, a purpose-built Cybersecurity Operations Chief of Staff. Hootz executes complex security tasks autonomously, maintains long-term project memory, manages worker agents, and delivers outputs with precision.
+This workspace gives Claude a defined role, operating standards, and a set of specialized workers to execute cybersecurity tasks with precision and consistency. Once initialized, Claude reads the governing documents in `01_CONTEXT/` and operates as a dedicated cybersecurity operations partner for the session.
 
-The workspace is not a general-purpose setup. It is scoped to:
+The workspace is scoped to:
 - Threat hunting and detection engineering
 - Security advisory and risk prioritization
 - Query development (CQL, KQL, SPL)
@@ -17,6 +17,12 @@ The workspace is not a general-purpose setup. It is scoped to:
 - Incident response support
 
 All behavior is governed by the documents in `01_CONTEXT/`.
+
+---
+
+## Getting Started
+
+See `INITIALIZE.md` at the root of this workspace. Copy the initialization prompt, paste it into Claude (Cowork mode) with this folder selected, and the session will bootstrap itself automatically.
 
 ---
 
