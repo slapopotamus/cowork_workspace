@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Backups (large zips, don't commit)
+06_BACKUP/
+
+# OS
+.DS_Store
+Thumbs.db

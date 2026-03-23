@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security Council — Session Index</title>
+    <style>
+        :root {
+            --bg-page: #0d1117;
+            --bg-surface: #161b22;
+            --bg-header: #21262d;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-accent: #58a6ff;
+            --hover-row: #1c2128;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            padding: 3rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        p {
+            color: #8b949e;
+            margin-bottom: 2.5rem;
+        }
+
+        .table-container {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--bg-surface);
+        }
+
+        th, td {
+            text-align: left;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-header);
+            color: var(--text-primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background-color: var(--hover-row);
+        }
+
+        a {
+            color: var(--text-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: text-decoration 0.2s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--text-accent);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+        }
+
+        .confidence-High { border-color: #238636; color: #3fb950; background: rgba(35, 134, 54, 0.1); }
+        .confidence-Medium { border-color: #9e6a03; color: #d29922; background: rgba(158, 106, 3, 0.1); }
+        .confidence-Low { border-color: #da3633; color: #f85149; background: rgba(218, 54, 51, 0.1); }
+    </style>
+</head>
+<body>
+    <h1>Cyber Security Council — Session Index</h1>
+    <p>This file catalogs all completed Cyber Security Council sessions. The orchestrator automatically appends rows before the <code>&lt;!-- ROWS_END --&gt;</code> marker. Manual entries must follow the same row format.</p>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th width="10%">Date</th>
+                    <th width="22%">Session ID (Link)</th>
+                    <th width="28%">Topic</th>
+                    <th width="18%">Experts</th>
+                    <th width="13%">Outcome</th>
+                    <th width="9%">Confidence</th>
+                </tr>
+            </thead>
+            <tbody id="session-table-body">
+                <!-- ROWS_START -->
+                <!-- Example Row (6 columns):
+                <tr>
+                    <td>2026-03-20</td>
+                    <td><a href="./2026-03-20-pqc-readiness.md">2026-03-20-pqc-readiness.md</a></td>
+                    <td>Post-quantum cryptography migration readiness</td>
+                    <td>VORONOV, HARTLEY, OSEI</td>
+                    <td><span class="badge">Majority Decision</span></td>
+                    <td><span class="badge confidence-Medium">Medium</span></td>
+                </tr>
+                -->
+                <tr>
+                    <td>2026-03-19</td>
+                    <td><a href="./2026-03-19-darksword-ios-exploit.md">2026-03-19-darksword-ios-exploit.md</a></td>
+                    <td>How worried should our organization be about the DarkSword iOS exploit...</td>
+                    <td>VANCE, OKAFOR, BRENNAN</td>
+                    <td><span class="badge">Consensus (3–0)</span></td>
+                    <td><span class="badge confidence-High">High</span></td>
+                </tr>
+                <tr>
+                    <td>2026-03-19</td>
+                    <td><a href="./2026-03-19-post-quantum-cryptography.md">2026-03-19-post-quantum-cryptography.md</a></td>
+                    <td>Should our organization begin planning quantum-resistant encryption now...</td>
+                    <td>VORONOV, HARTLEY, OSEI</td>
+                    <td><span class="badge">Consensus (3–0)</span></td>
+                    <td><span class="badge confidence-High">High / Moderate</span></td>
+                </tr>
+                <tr>
+                    <td>2026-03-20</td>
+                    <td><a href="./2026-03-20-vpn-ransomware-threat.md">2026-03-20-vpn-ransomware-threat.md</a></td>
+                    <td>Active ransomware group exploiting VPN vulnerability; suspicious PowerShell detected...</td>
+                    <td>OKAFOR, CALLOWAY, VANCE, BRENNAN, HARTLEY</td>
+                    <td><span class="badge">Consensus (5–0)</span></td>
+                    <td><span class="badge confidence-High">High</span></td>
+                </tr>
+                <!-- ROWS_END -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

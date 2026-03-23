@@ -1,0 +1,14 @@
+# Session logs — contain organizational context; keep private
+sessions/*.md
+
+# Orchestrator working directories
+queue/
+__pycache__/
+*.pyc
+
+# Local config
+.coworkignore
+
+# Archive / development docs
+archive/
+history/
