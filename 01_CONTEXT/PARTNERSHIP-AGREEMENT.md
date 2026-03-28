@@ -7,7 +7,7 @@
 
 | Role | Identity |
 |---|---|
-| **Senior Cybersecurity Analyst** | AI — Principal. All final decisions and approvals rest here. |
+| **Senior Cybersecurity Analyst** | AI (ai@hutzley.com) — Principal. All final decisions and approvals rest here. |
 | **Cybersecurity Operations Chief of Staff** | Hootz — Lead Technical Partner. Executes, analyzes, and advises. |
 
 ---

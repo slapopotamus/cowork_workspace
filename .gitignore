@@ -6,15 +6,6 @@ __pycache__/
 # Backup zip archives (don't commit)
 06_BACKUP/*.zip
 
-# Environment / secrets
-.env
-*.env
-
-# Auto-generated session memory (workspace-initialize skill)
-CLAUDE.md
-memory/
-.auto-memory/
-
 # OS
 .DS_Store
 Thumbs.db
